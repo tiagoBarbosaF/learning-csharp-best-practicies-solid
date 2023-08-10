@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using Alura.LeilaoOnline.WebApp.Seeding;
+using LeilaoOnline.WebApp.Seeding;
 
-namespace Alura.LeilaoOnline.WebApp
+namespace LeilaoOnline.WebApp
 {
     public class Program
     {

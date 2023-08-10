@@ -1,12 +1,12 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Alura.LeilaoOnline.WebApp.Dados;
-using Alura.LeilaoOnline.WebApp.Models;
 using System;
 using System.Collections.Generic;
+using LeilaoOnline.WebApp.Dados;
+using LeilaoOnline.WebApp.Models;
 
-namespace Alura.LeilaoOnline.WebApp.Controllers
+namespace LeilaoOnline.WebApp.Controllers
 {
     public class LeilaoController : Controller
     {

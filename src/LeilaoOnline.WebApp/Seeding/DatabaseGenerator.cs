@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Alura.LeilaoOnline.WebApp.Models;
-using Alura.LeilaoOnline.WebApp.Dados;
+using LeilaoOnline.WebApp.Dados;
+using LeilaoOnline.WebApp.Models;
 
-namespace Alura.LeilaoOnline.WebApp.Seeding
+namespace LeilaoOnline.WebApp.Seeding
 {
     public static class DatabaseGenerator
     {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Alura.LeilaoOnline.WebApp.Models
+namespace LeilaoOnline.WebApp.Models
 {
     public class Categoria
     {

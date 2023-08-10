@@ -1,9 +1,9 @@
 using System;
 using Xunit;
 using Microsoft.AspNetCore.Mvc;
-using Alura.LeilaoOnline.WebApp.Controllers;
+using LeilaoOnline.WebApp.Controllers;
 
-namespace Alura.LeilaoOnline.Testes
+namespace LeilaoOnline.Testes
 {
     public class LeilaoControllerRemove
     {
@@ -11,7 +11,7 @@ namespace Alura.LeilaoOnline.Testes
         public void DadoLeilaoInexistenteEntaoRetorna404()
         {
             // arrange
-            var idLeilaoInexistente = 11232; // preciso entrar no banco para saber qual È inexistente!! teste deixa de ser autom·tico...
+            var idLeilaoInexistente = 11232; // preciso entrar no banco para saber qual √© inexistente!! teste deixa de ser autom√°tico...
             var actionResultEsperado = typeof(NotFoundResult);
             var controller = new LeilaoController();
 
@@ -26,7 +26,7 @@ namespace Alura.LeilaoOnline.Testes
         public void DadoLeilaoEmPregaoEntaoRetorna405()
         {
             // arrange
-            var idLeilaoEmPregao = 11232; // qual leilao est· em preg„o???!! 
+            var idLeilaoEmPregao = 11232; // qual leilao est√° em preg√£o???!! 
             var actionResultEsperado = typeof(StatusCodeResult);
             var controller = new LeilaoController();
 
@@ -41,7 +41,7 @@ namespace Alura.LeilaoOnline.Testes
         public void DadoLeilaoEmRascunhoEntaoExcluiORegistro()
         {
             // arrange
-            var idLeilaoEmRascunho = 11232; // qual leilao est· em rascunho???!!
+            var idLeilaoEmRascunho = 11232; // qual leilao est√° em rascunho???!!
             var actionResultEsperado = typeof(NoContentResult);
             var controller = new LeilaoController();
 

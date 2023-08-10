@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Alura.LeilaoOnline.CLI
+namespace LeilaoOnline.CLI
 {
     class Program
     {

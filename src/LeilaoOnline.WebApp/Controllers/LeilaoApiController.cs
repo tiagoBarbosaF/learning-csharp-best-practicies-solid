@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Alura.LeilaoOnline.WebApp.Models;
-using Alura.LeilaoOnline.WebApp.Dados;
+using LeilaoOnline.WebApp.Dados;
+using LeilaoOnline.WebApp.Models;
 
-namespace Alura.LeilaoOnline.WebApp.Controllers
+namespace LeilaoOnline.WebApp.Controllers
 {
     [ApiController]
     [Route("/api/leiloes")]

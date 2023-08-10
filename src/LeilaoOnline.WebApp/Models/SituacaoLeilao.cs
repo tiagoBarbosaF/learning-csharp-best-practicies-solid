@@ -1,4 +1,4 @@
-﻿namespace Alura.LeilaoOnline.WebApp.Models
+﻿namespace LeilaoOnline.WebApp.Models
 {
     public enum SituacaoLeilao
     {

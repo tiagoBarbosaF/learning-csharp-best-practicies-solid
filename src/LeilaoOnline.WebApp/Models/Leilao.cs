@@ -1,25 +1,25 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Alura.LeilaoOnline.WebApp.Models
+namespace LeilaoOnline.WebApp.Models
 {
     public class Leilao
     {        
         public int Id { get; set; }
         
-        [Required(ErrorMessage = "TÌtulo È obrigatÛrio")] 
-        [Display(Name = "TÌtulo", Prompt = "Digite o tÌtulo do leil„o")]
+        [Required(ErrorMessage = "T√≠tulo √© obrigat√≥rio")] 
+        [Display(Name = "T√≠tulo", Prompt = "Digite o t√≠tulo do leil√£o")]
         public string Titulo { get; set; }
 
-        [Display(Name = "DescriÁ„o")]
+        [Display(Name = "Descri√ß√£o")]
         public string Descricao { get; set; }
 
-        [Display(Name = "InÌcio do Preg„o")]
-        [DataType(DataType.DateTime, ErrorMessage = "Data inv·lida")]
+        [Display(Name = "In√≠cio do Preg√£o")]
+        [DataType(DataType.DateTime, ErrorMessage = "Data inv√°lida")]
         public DateTime? Inicio { get; set; }
 
-        [Display(Name = "TÈrmino do Preg„o")]
-        [DataType(DataType.DateTime, ErrorMessage = "Data inv·lida")]
+        [Display(Name = "T√©rmino do Preg√£o")]
+        [DataType(DataType.DateTime, ErrorMessage = "Data inv√°lida")]
         public DateTime? Termino { get; set; }
 
         public int IdCategoria { get; set; }

@@ -1,11 +1,11 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Alura.LeilaoOnline.WebApp.Dados;
-using Alura.LeilaoOnline.WebApp.Models;
+using LeilaoOnline.WebApp.Dados;
+using LeilaoOnline.WebApp.Models;
 using Microsoft.AspNetCore.Routing;
 
-namespace Alura.LeilaoOnline.WebApp.Controllers
+namespace LeilaoOnline.WebApp.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,7 +1,7 @@
 using System;
-using Alura.LeilaoOnline.WebApp.Models;
+using LeilaoOnline.WebApp.Models;
 
-namespace Alura.LeilaoOnline.WebApp.Seeding
+namespace LeilaoOnline.WebApp.Seeding
 {
     public class LeilaoRandomGenerator
     {

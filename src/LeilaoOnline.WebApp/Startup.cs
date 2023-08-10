@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Alura.LeilaoOnline.WebApp
+namespace LeilaoOnline.WebApp
 {
     public class Startup
     {
