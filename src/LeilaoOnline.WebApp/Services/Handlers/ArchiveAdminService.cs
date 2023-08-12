@@ -10,9 +10,9 @@ namespace LeilaoOnline.WebApp.Services.Handlers
     {
         private IAdminService _defaultAdminService;
 
-        public ArchiveAdminService(ILeilaoDao leilaoDao)
+        public ArchiveAdminService(ILeilaoDao leilaoDao, ICategoriaDao categoriaDao)
         {
-            _defaultAdminService = new DefaultAdminService(leilaoDao);
+            _defaultAdminService = new DefaultAdminService(leilaoDao, categoriaDao);
         }
 
         public IEnumerable<Categoria> GetCategorias()

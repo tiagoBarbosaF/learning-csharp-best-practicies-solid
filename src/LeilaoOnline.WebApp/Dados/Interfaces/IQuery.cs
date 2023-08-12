@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
-using LeilaoOnline.WebApp.Models;
 
 namespace LeilaoOnline.WebApp.Dados.Interfaces
 {
-    public interface ICategoriaDao : IQuery<Categoria>
+    public interface IQuery<T>
     {
+        IEnumerable<T> GetAll();
+
+        T GetById(int id);
     }
 }

@@ -21,7 +21,7 @@ namespace LeilaoOnline.WebApp.Services.Handlers
         {
             var normalizedTerm = term.ToUpper();
 
-            return _leilaoDao.GetLeiloes().Where(c =>
+            return _leilaoDao.GetAll().Where(c =>
                 c.Titulo.ToUpper().Contains(normalizedTerm) ||
                 c.Descricao.ToUpper().Contains(normalizedTerm) ||
                 c.Categoria.Descricao.ToUpper().Contains(normalizedTerm));
@@ -29,7 +29,7 @@ namespace LeilaoOnline.WebApp.Services.Handlers
 
         public IEnumerable<CategoriaComInfoLeilao> GetCategoriasWithTotalLeiloesInPregao()
         {
-            return _categoriaDao.GetCategorias().Select(c => new CategoriaComInfoLeilao
+            return _categoriaDao.GetAll().Select(c => new CategoriaComInfoLeilao
             {
                 Id = c.Id,
                 Descricao = c.Descricao,
@@ -42,7 +42,7 @@ namespace LeilaoOnline.WebApp.Services.Handlers
 
         public Categoria GetCategoriaByIdWithLeiloesInPregao(int id)
         {
-            throw new System.NotImplementedException();
+            return _categoriaDao.GetById(id);
         }
     }
 }

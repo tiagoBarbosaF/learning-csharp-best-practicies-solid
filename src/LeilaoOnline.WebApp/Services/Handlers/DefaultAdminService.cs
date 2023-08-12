@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using LeilaoOnline.WebApp.Dados.Interfaces;
 using LeilaoOnline.WebApp.Models;
 using LeilaoOnline.WebApp.Services.Interfaces;
@@ -9,20 +10,23 @@ namespace LeilaoOnline.WebApp.Services.Handlers
     public class DefaultAdminService : IAdminService
     {
         private ILeilaoDao _leilaoDao;
+        private ICategoriaDao _categoriaDao;
 
-        public DefaultAdminService(ILeilaoDao leilaoDao)
+        public DefaultAdminService(ILeilaoDao leilaoDao, ICategoriaDao categoriaDao)
         {
             _leilaoDao = leilaoDao;
+            _categoriaDao = categoriaDao;
         }
+
 
         public IEnumerable<Categoria> GetCategorias()
         {
-            return _leilaoDao.GetCategorias();
+            return _categoriaDao.GetAll();
         }
 
         public IEnumerable<Leilao> GetLeiloes()
         {
-            return _leilaoDao.GetLeiloes();
+            return _leilaoDao.GetAll();
         }
 
         public Leilao GetLeilaoById(int id)

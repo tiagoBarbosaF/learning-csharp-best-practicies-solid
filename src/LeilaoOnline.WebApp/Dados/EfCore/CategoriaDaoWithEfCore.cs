@@ -15,12 +15,12 @@ namespace LeilaoOnline.WebApp.Dados.EfCore
             _context = context;
         }
 
-        public IEnumerable<Categoria> GetCategorias()
+        public IEnumerable<Categoria> GetAll()
         {
             return _context.Categorias.Include(c => c.Leiloes);
         }
 
-        public Categoria GetCategoriasById(int id)
+        public Categoria GetById(int id)
         {
             return _context.Categorias
                 .Include(c => c.Leiloes)

@@ -3,18 +3,7 @@ using LeilaoOnline.WebApp.Models;
 
 namespace LeilaoOnline.WebApp.Dados.Interfaces
 {
-    public interface ILeilaoDao
+    public interface ILeilaoDao : ICommand<Leilao>, IQuery<Leilao>
     {
-        IEnumerable<Categoria> GetCategorias();
-
-        Leilao GetById(int id);
-
-        IEnumerable<Leilao> GetLeiloes();
-
-        void Record(Leilao leilao);
-
-        void Update(Leilao leilao);
-
-        void Remove(Leilao leilao);
     }
 }
