@@ -1,22 +1,18 @@
+using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using LeilaoOnline.WebApp.Dados;
 using LeilaoOnline.WebApp.Models;
+using LeilaoOnline.WebApp.Dados.Interfaces;
 
 namespace LeilaoOnline.WebApp.Controllers
 {
     public class LeilaoController : Controller
     {
-        AppDbContext _context;
-        private LeilaoDao _leilaoDao;
+        private ILeilaoDao _leilaoDao;
 
-        public LeilaoController()
+        public LeilaoController(ILeilaoDao leilaoDao)
         {
-            _leilaoDao = new LeilaoDao();
-            _context = new AppDbContext();
+            _leilaoDao = leilaoDao;
         }
 
 

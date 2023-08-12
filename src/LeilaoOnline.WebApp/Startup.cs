@@ -1,3 +1,5 @@
+using LeilaoOnline.WebApp.Dados.EfCore;
+using LeilaoOnline.WebApp.Dados.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -7,9 +9,10 @@ namespace LeilaoOnline.WebApp
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<ILeilaoDao, LeilaoDaoWithEfCore>();
             services
                 .AddControllersWithViews()
-                .AddNewtonsoftJson(options => 
+                .AddNewtonsoftJson(options =>
                 {
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 });

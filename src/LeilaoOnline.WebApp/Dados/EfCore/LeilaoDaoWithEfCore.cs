@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using LeilaoOnline.WebApp.Dados.Interfaces;
 using LeilaoOnline.WebApp.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace LeilaoOnline.WebApp.Dados
+namespace LeilaoOnline.WebApp.Dados.EfCore
 {
-    public class LeilaoDao
+    public class LeilaoDaoWithEfCore : ILeilaoDao
     {
         AppDbContext _context;
 
-        public LeilaoDao()
+        public LeilaoDaoWithEfCore()
         {
             _context = new AppDbContext();
         }

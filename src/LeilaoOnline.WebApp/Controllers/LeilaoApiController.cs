@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using LeilaoOnline.WebApp.Dados;
+using LeilaoOnline.WebApp.Dados.Interfaces;
 using LeilaoOnline.WebApp.Models;
 
 namespace LeilaoOnline.WebApp.Controllers
@@ -9,13 +8,11 @@ namespace LeilaoOnline.WebApp.Controllers
     [Route("/api/leiloes")]
     public class LeilaoApiController : ControllerBase
     {
-        AppDbContext _context;
-        private LeilaoDao _leilaoDao;
+        ILeilaoDao _leilaoDao;
 
-        public LeilaoApiController()
+        public LeilaoApiController(ILeilaoDao leilaoDao)
         {
-            _context = new AppDbContext();
-            _leilaoDao = new LeilaoDao();
+            _leilaoDao = leilaoDao;
         }
 
         [HttpGet]

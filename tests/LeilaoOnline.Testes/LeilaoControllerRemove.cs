@@ -2,18 +2,28 @@ using System;
 using Xunit;
 using Microsoft.AspNetCore.Mvc;
 using LeilaoOnline.WebApp.Controllers;
+using LeilaoOnline.WebApp.Dados.Interfaces;
 
 namespace LeilaoOnline.Testes
 {
     public class LeilaoControllerRemove
     {
+
+        private ILeilaoDao _leilaoDao;
+        private LeilaoController controller;
+
+        public LeilaoControllerRemove(ILeilaoDao leilaoDao)
+        {
+            _leilaoDao = leilaoDao;
+            controller = new LeilaoController(_leilaoDao);
+        }
+
         [Fact]
         public void DadoLeilaoInexistenteEntaoRetorna404()
         {
             // arrange
             var idLeilaoInexistente = 11232; // preciso entrar no banco para saber qual é inexistente!! teste deixa de ser automático...
             var actionResultEsperado = typeof(NotFoundResult);
-            var controller = new LeilaoController();
 
             // act
             var result = controller.Remove(idLeilaoInexistente);
@@ -28,7 +38,6 @@ namespace LeilaoOnline.Testes
             // arrange
             var idLeilaoEmPregao = 11232; // qual leilao está em pregão???!! 
             var actionResultEsperado = typeof(StatusCodeResult);
-            var controller = new LeilaoController();
 
             // act
             var result = controller.Remove(idLeilaoEmPregao);
@@ -43,7 +52,6 @@ namespace LeilaoOnline.Testes
             // arrange
             var idLeilaoEmRascunho = 11232; // qual leilao está em rascunho???!!
             var actionResultEsperado = typeof(NoContentResult);
-            var controller = new LeilaoController();
 
             // act
             var result = controller.Remove(idLeilaoEmRascunho);

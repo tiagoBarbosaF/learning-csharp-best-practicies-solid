@@ -1,7 +1,7 @@
-using Microsoft.EntityFrameworkCore;
 using LeilaoOnline.WebApp.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace LeilaoOnline.WebApp.Dados
+namespace LeilaoOnline.WebApp.Dados.EfCore
 {
     public class AppDbContext : DbContext
     {
