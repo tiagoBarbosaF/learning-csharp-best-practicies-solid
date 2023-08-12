@@ -10,9 +10,9 @@ namespace LeilaoOnline.WebApp.Dados.EfCore
     {
         AppDbContext _context;
 
-        public LeilaoDaoWithEfCore()
+        public LeilaoDaoWithEfCore(AppDbContext context)
         {
-            _context = new AppDbContext();
+            _context = context;
         }
 
         public IEnumerable<Categoria> GetCategorias()

@@ -3,19 +3,20 @@ using Xunit;
 using Microsoft.AspNetCore.Mvc;
 using LeilaoOnline.WebApp.Controllers;
 using LeilaoOnline.WebApp.Dados.Interfaces;
+using LeilaoOnline.WebApp.Services.Interfaces;
 
 namespace LeilaoOnline.Testes
 {
     public class LeilaoControllerRemove
     {
 
-        private ILeilaoDao _leilaoDao;
+        private IAdminService _adminService;
         private LeilaoController controller;
 
-        public LeilaoControllerRemove(ILeilaoDao leilaoDao)
+        public LeilaoControllerRemove(IAdminService adminService)
         {
-            _leilaoDao = leilaoDao;
-            controller = new LeilaoController(_leilaoDao);
+            _adminService = adminService;
+            controller = new LeilaoController(_adminService);
         }
 
         [Fact]

@@ -1,5 +1,7 @@
 using LeilaoOnline.WebApp.Dados.EfCore;
 using LeilaoOnline.WebApp.Dados.Interfaces;
+using LeilaoOnline.WebApp.Services.Handlers;
+using LeilaoOnline.WebApp.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,6 +12,10 @@ namespace LeilaoOnline.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<ILeilaoDao, LeilaoDaoWithEfCore>();
+            services.AddTransient<ICategoriaDao, CategoriaDaoWithEfCore>();
+            services.AddTransient<IProdutoService, DefaultProdutoService>();
+            services.AddTransient<IAdminService, ArchiveAdminService>();
+            services.AddDbContext<AppDbContext>();
             services
                 .AddControllersWithViews()
                 .AddNewtonsoftJson(options =>
